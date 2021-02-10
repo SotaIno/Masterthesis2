@@ -1,0 +1,177 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{arute2019quantum}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{hash=a0b41f4400dc855d7426a5f72cadaa6c}{%
+           family={Arute},
+           familyi={A\bibinitperiod},
+           given={Frank},
+           giveni={F\bibinitperiod}}}%
+        {{hash=0a2abe43325e0dd3690ccc47bfa6c6b7}{%
+           family={Arya},
+           familyi={A\bibinitperiod},
+           given={Kunal},
+           giveni={K\bibinitperiod}}}%
+        {{hash=7bb1dcf8a93d1ecc6f9531ece93ef1fa}{%
+           family={Babbush},
+           familyi={B\bibinitperiod},
+           given={Ryan},
+           giveni={R\bibinitperiod}}}%
+        {{hash=5ef37e7fe45a9ff23c761910726d5e4b}{%
+           family={Bacon},
+           familyi={B\bibinitperiod},
+           given={Dave},
+           giveni={D\bibinitperiod}}}%
+        {{hash=d831c1d824f8a4e2a69f6495b8fdc91b}{%
+           family={Bardin},
+           familyi={B\bibinitperiod},
+           given={Joseph\bibnamedelima C},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+        {{hash=659b693e073fa93a83924447ea805d77}{%
+           family={Barends},
+           familyi={B\bibinitperiod},
+           given={Rami},
+           giveni={R\bibinitperiod}}}%
+        {{hash=44196321323dfc67fdaa85c495168130}{%
+           family={Biswas},
+           familyi={B\bibinitperiod},
+           given={Rupak},
+           giveni={R\bibinitperiod}}}%
+        {{hash=915e31fc5958183d06275c3c3e811123}{%
+           family={Boixo},
+           familyi={B\bibinitperiod},
+           given={Sergio},
+           giveni={S\bibinitperiod}}}%
+        {{hash=cfb6bdb1d0b7056322d56e3f4fad93a8}{%
+           family={Brandao},
+           familyi={B\bibinitperiod},
+           given={Fernando\bibnamedelima GSL},
+           giveni={F\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=11aed4b55c11ca1030deddd80f15b620}{%
+           family={Buell},
+           familyi={B\bibinitperiod},
+           given={David\bibnamedelima A},
+           giveni={D\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Nature Publishing Group}%
+      }
+      \strng{namehash}{b5ee69b81bc21fd247bbaf0f432158b6}
+      \strng{fullhash}{55613907443ff6cab6a34e8390996104}
+      \strng{bibnamehash}{55613907443ff6cab6a34e8390996104}
+      \strng{authorbibnamehash}{55613907443ff6cab6a34e8390996104}
+      \strng{authornamehash}{b5ee69b81bc21fd247bbaf0f432158b6}
+      \strng{authorfullhash}{55613907443ff6cab6a34e8390996104}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Nature}
+      \field{number}{7779}
+      \field{title}{Quantum supremacy using a programmable superconducting processor}
+      \field{volume}{574}
+      \field{year}{2019}
+      \field{pages}{505\bibrangedash 510}
+      \range{pages}{6}
+    \endentry
+    \entry{zhong2020quantum}{article}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{hash=37c34a628889056bd7180d4c235fc151}{%
+           family={Zhong},
+           familyi={Z\bibinitperiod},
+           given={Han-Sen},
+           giveni={H\bibinithyphendelim S\bibinitperiod}}}%
+        {{hash=a753993c6afc6bfea114ea4114b2e619}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Hui},
+           giveni={H\bibinitperiod}}}%
+        {{hash=0f200836a902836ff8676c7599d30b7f}{%
+           family={Deng},
+           familyi={D\bibinitperiod},
+           given={Yu-Hao},
+           giveni={Y\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=6cd8011830a62a9b5a449d2de4c47257}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={Ming-Cheng},
+           giveni={M\bibinithyphendelim C\bibinitperiod}}}%
+        {{hash=087123fb4f14c2540a257c28a709871c}{%
+           family={Peng},
+           familyi={P\bibinitperiod},
+           given={Li-Chao},
+           giveni={L\bibinithyphendelim C\bibinitperiod}}}%
+        {{hash=6a546581b68b01a2626afb158243cfbc}{%
+           family={Luo},
+           familyi={L\bibinitperiod},
+           given={Yi-Han},
+           giveni={Y\bibinithyphendelim H\bibinitperiod}}}%
+        {{hash=1ea9e4f8bb3bf64d2c487bb7a7961587}{%
+           family={Qin},
+           familyi={Q\bibinitperiod},
+           given={Jian},
+           giveni={J\bibinitperiod}}}%
+        {{hash=457a24ed2e5e3879679323a275ff24fb}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Dian},
+           giveni={D\bibinitperiod}}}%
+        {{hash=ad81d91ad9f28e673c628bd970306851}{%
+           family={Ding},
+           familyi={D\bibinitperiod},
+           given={Xing},
+           giveni={X\bibinitperiod}}}%
+        {{hash=7150f56689dcf5a744083321653c466d}{%
+           family={Hu},
+           familyi={H\bibinitperiod},
+           given={Yi},
+           giveni={Y\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Association for the Advancement of Science}%
+      }
+      \strng{namehash}{fcf8493249b94a1c887b9ad6ec328e70}
+      \strng{fullhash}{8ae4894aa9fee23c6038ea748c23c627}
+      \strng{bibnamehash}{8ae4894aa9fee23c6038ea748c23c627}
+      \strng{authorbibnamehash}{8ae4894aa9fee23c6038ea748c23c627}
+      \strng{authornamehash}{fcf8493249b94a1c887b9ad6ec328e70}
+      \strng{authorfullhash}{8ae4894aa9fee23c6038ea748c23c627}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Science}
+      \field{number}{6523}
+      \field{title}{Quantum computational advantage using photons}
+      \field{volume}{370}
+      \field{year}{2020}
+      \field{pages}{1460\bibrangedash 1463}
+      \range{pages}{4}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

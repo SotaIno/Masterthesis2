@@ -1,0 +1,110 @@
+\documentclass[uplatex,openany,oneside,a4j,11pt]{jsbook}
+\usepackage[top=25truemm,bottom=25truemm,left=25truemm,right=25truemm]{geometry}
+\usepackage[dvipdfmx]{graphicx}
+\graphicspath{{./img/}}
+\usepackage[dvipdfmx]{color}
+\usepackage[dvipdfmx,colorlinks,linkcolor=blue,urlcolor=blue,bookmarks=true,bookmarksnumbered=true]{hyperref}
+\usepackage{pxjahyper}
+\usepackage{bookmark}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{here}
+\usepackage{comment}
+\usepackage{subfigure}
+\usepackage{braket}
+\usepackage{caption}
+
+\def\inner<#1,#2>{\langle #1|#2 \rangle}
+%\def\outer<#1>{\rangle #1 \langle}
+
+%\usepackage{mediabb}
+%\addbibresource{'C:/Users/miyao/Desktop/MasterThesis/bibs'}
+%\usepackage{physics}
+\usepackage[style=phys,articletitle=true,biblabel=brackets,chaptertitle=false,pageranges=false,backend=biber]{biblatex}
+\addbibresource{bibs.bib}
+\begin{document}
+\begin{titlepage}
+    \begin{center}
+        {\Large 2020 年度　修士論文}\\
+        \vspace{180truept}
+        {\Huge 超伝導量子ビット間における\\
+        \vspace{10truept}
+        CZゲートの研究}\\
+        \vspace{70truept}
+
+        {\Large \today}\\
+
+        \vspace{70truept}
+
+        {\Large 東京理科大学大学院 理学研究科物理学専攻　蔡研究室\\
+        （学籍番号 1219506）}\\
+
+        \vspace{20truept}
+
+        {\huge 亥埜 創太}\\
+
+        \vspace{160truept}
+        {\Large 東京理科大学大学院 理学研究科物理学専攻}\\
+    \end{center}
+\end{titlepage}
+\addcontentsline{toc}{chapter}{序章}
+
+\include{abstract}
+\setcounter{tocdepth}{2}
+\tableofcontents
+%\mainmatter
+\chapter{目的}
+    \begin{abstract}
+    \end{abstract}
+    \input{purpose}
+
+    \chapter{原理}
+    \begin{abstract}
+    \end{abstract}
+    \input{theory}
+
+\chapter{サンプル作製}
+    \begin{abstract}
+    \end{abstract}
+    \input{implementation}
+
+\chapter{測定}
+    \begin{abstract}
+    \end{abstract}
+    \input{measurement}
+
+\chapter{結果}
+    \begin{abstract}
+    \end{abstract}
+    \input{result}
+
+\chapter{考察}
+    \begin{abstract}
+    \end{abstract}
+    \input{discussion}
+
+\chapter{結論}
+    \begin{abstract}
+    \end{abstract}
+    \input{conclusion}
+
+\chapter{展望}
+    \begin{abstract}
+    \end{abstract}
+    \input{outlook}
+
+\chapter{謝辞}
+    \begin{abstract}
+    \end{abstract}
+    \input{apology}
+
+\chapter{補遺}
+    \begin{abstract}
+    \end{abstract}
+    \input{appendix}
+\addcontentsline{toc}{chapter}{参考文献}
+\printbibliography[title=参考文献]
+\end{document}

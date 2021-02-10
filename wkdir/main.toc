@@ -1,0 +1,119 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{序章}{1}{Doc-Start}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {第1章}目的}{4}{chapter.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1.1}CZゲートの実現・精度向上}{4}{section.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {第2章}原理}{5}{chapter.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.1}量子ビット}{5}{section.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.1}量子ビットの表現}{5}{subsection.2.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{ブロッホ球}{5}{section*.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{状態・期待値の測定}{6}{section*.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{密度演算子}{6}{section*.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{多量子ビット系の表現}{7}{section*.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1.2}量子ビットの時間発展}{8}{subsection.2.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{時間発展演算子}{8}{section*.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Pauli行列}{9}{section*.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.2}超伝導素子による量子ビットの実装}{9}{section.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.1}調和振動子系のハミルトニアン}{9}{subsection.2.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{LC共振器}{10}{section*.10}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.2}ジョセフソン接合}{12}{subsection.2.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{DC-SQUID}{13}{section*.14}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.3}SQUIDによる量子ビットの実装}{14}{subsection.2.2.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.4}他素子との結合}{16}{subsection.2.2.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{共振器との結合}{16}{section*.17}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{量子ビットとの結合}{16}{section*.18}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2.5}デコヒーレンス}{16}{subsection.2.2.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{$T_1$,$T_2$,$T_2^E$}{16}{section*.19}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2.3}量子ビットゲート}{16}{section.2.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.1}1qubitゲート}{16}{subsection.2.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{X,Y軸回転}{16}{section*.20}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Z軸回転}{16}{section*.21}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{その他の重要1qubitゲート}{16}{section*.22}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3.2}CZゲート}{16}{subsection.2.3.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{CZゲートの理論}{16}{section*.23}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{実装上の課題1.CZゲートの断熱・非断熱過程}{16}{section*.24}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{実装上の課題2.低周波磁束ノイズ}{16}{section*.25}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{パルス制御}{16}{section*.26}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {第3章}サンプル作製}{17}{chapter.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3.1}設計}{17}{section.3.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {第4章}測定}{18}{chapter.4}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}解析手法}{18}{section.4.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}測定環境}{18}{section.4.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {第5章}結果}{19}{chapter.5}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.1}周波数領域測定}{19}{section.5.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.1.1}セットアップ}{19}{subsection.5.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}時間領域測定}{19}{section.5.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.1}セットアップ}{19}{subsection.5.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {第6章}考察}{20}{chapter.6}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.1}非断熱的・断熱的量子ゲートの比較}{20}{section.6.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6.2}ゲート忠実度低下の要因}{20}{section.6.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {第7章}結論}{21}{chapter.7}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7.1}解析を終えて}{21}{section.7.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {第8章}展望}{22}{chapter.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8.1}今後の展望}{22}{section.8.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.1.1}結合可変なCZゲートの実現}{22}{subsection.8.1.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.1.2}パラメトリック量子回路の最適化}{22}{subsection.8.1.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {第9章}謝辞}{23}{chapter.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {第10章}補遺}{24}{chapter.10}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {10.1}ハミルトニアンの基底変換}{24}{section.10.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {10.2}マスター方程式}{25}{section.10.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {10.3}2点相関関数}{25}{section.10.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{参考文献}{25}{section.10.3}%
