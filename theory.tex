@@ -218,8 +218,13 @@
             U^\dagger = \exp (\frac{i}{\hbar}\hat{H}t)
         \end{eqnarray}
         となり、$U$の逆行列となる。自身のエルミート行列が逆行列となる演算子をユニタリ演算子といい、一般的な量子系の時間発展はユニタリ行列により与えられる。
-        ユニタリ行列のベクトルへの作用を強調する場合は単に変換ともいう。
-
+        ユニタリ行列のベクトルへの作用を強調する場合は単に変換ともいう。\\
+        また、ユニタリ行列を物理量に作用する演算子と考えると、状態は変化せず物理量のみが時間変化するという時間発展のしかたを考えることができる(Heisenberg描像)。
+        この場合、ハミルトニアン$\hat{H}$は
+        \begin{equation}
+           \hat{H} \to U^\dagger \hat{H} U
+        \end{equation}
+        と変換される。
         \subsubsection{Pauli行列}
         量子ビットに対し行われる変換及び、量子ビットを記述するハミルトニアン(次節で後述)の中に頻繁に表れる演算子であるPauli行列について説明する。
         単位行列$I$およびPauli行列$\sigma_x,\sigma_y,\sigma_z$は以下の形で表される。
@@ -470,13 +475,15 @@
         \begin{figure}[H]
             \begin{center}
                 \includegraphics[width=5cm]{CPB.png}
-                \caption{クーパー対箱}
+                \caption{電荷量子ビット}
             \end{center}
         \end{figure}
         運動エネルギーT,ポテンシャルエネルギーUは磁束$\Phi$を一般化座標として
         \begin{eqnarray}
-            T=\frac{1}{2}C_J\dot{\Phi}^2+\frac{1}{2}C_g(\dot{\Phi}-V_g)^2\\
-            U=-E_J\cos(\phi)
+            \begin{aligned}
+                T&=\frac{1}{2}C_J\dot{\Phi}^2+\frac{1}{2}C_g(\dot{\Phi}-V_g)^2\\
+                U&=-E_J\cos(\phi)
+            \end{aligned}
         \end{eqnarray}
         となる。ここでジョセフソン接合における位相差$\phi$はジョセフソン効果の式から磁束$\Phi$と
         \begin{equation}
@@ -530,23 +537,346 @@
             \hat{\mathcal{H}} &=4 E_{C}\left(\hat{n}-n_{g}\right)^{2}-E_{J} \cos \hat{\phi} \\
             &=4 E_{C} \sum_{n}\left(n-n_{g}\right)^{2}\ket{n}\bra{n}-\frac{E_{J}}{2} \sum_{n}(\ket{n+1}\bra{n}+\ket{n}\bra{n+1})
             \end{aligned}\end{equation}
-        となる。
+        となる。\\
+        このハミルトニアンの固有エネルギーを数値計算で求め、$n_g$に対してプロットした結果を図()に示す。(電荷数$n$は$0\sim 2$までとした。)
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[width=8cm]{EJEC2.png}
+                \caption{電荷量子ビットの準位($E_J/E_C=2$)}
+            \end{center}
+        \end{figure}
+        放物線が交わる箇所において、エネルギーの縮退が解け準位同士のエネルギー交換が起きていることが分かる。この作用は$E_J$=0の時には現れず、ジョセフソン接合を含む
+        素子に特有の現象である。\\
+        また、$n_g \sim 0.5$において3準位目のエネルギーが高くなることが分かる。したがって$n_g \sim 0.5$となるようにゲート電圧を調整することにより
+        系を電荷数$n=0,1$までの2準位系に近似することができる。()のHamiltonianで系の状態を$\ket{0},\ket{1}$に限定すると
+        \begin{equation}
+            \begin{aligned}
+            \hat{\mathcal{H}}&=4E_C[ n_g^2 \ket{0} \bra{0} + (1-n_g)^2 \ket{1} \bra{1}]-\frac{E_J}{2}(\ket{1} \bra{0}+\ket{0} \bra{1})\\
+            &=-\frac{E_J}{2}\sigma_x + 4E_C(n_g-\frac{1}{2})\sigma_z + 2E_C [(1-n_g)^2+n_g^2] I
+            \end{aligned}
+        \end{equation}
+        となり、定数項を除くと
+        \begin{equation}
+            \hat{\mathcal{H}}=-\frac{E_J}{2}\sigma_x + 4E_C ( n_g-\frac{1}{2} ) \sigma_z
+        \end{equation}
+        と定義される。電荷量子ビットは$n_g \sim 0.5$で動作させることを考えると
+        \begin{equation}
+            \hat{\mathcal{H}}=-\frac{E_J}{2}\sigma_x
+        \end{equation}
+        となり、固有状態は
+        \begin{equation}
+            \ket{+}=\frac{1}{\sqrt2}(\ket{0}+\ket{1}),\quad \ket{-}=\frac{1}{\sqrt2}(\ket{0}-\ket{1})
+        \end{equation}
+        となる。固有状態は$\ket{0}$,$\ket{1}$であったほうが都合が良いので、
+        Hadamard変換
+        \begin{equation}
+            H=\left(
+            \begin{array}{cc}
+                1 & 0 \\
+                0 & -1 \\
+            \end{array}
+            \right)
+        \end{equation}
+        を作用させる。すると
+        \begin{equation}
+        H^\dagger \sigma_x H = \sigma_z, \quad H^\dagger \sigma_z H = \sigma_x
+        \end{equation}
+        であるので変換後のHamiltonianは
+        \begin{equation}
+            \hat{\mathcal{H}}=-\frac{E_J}{2}\sigma_z + 4E_C ( n_g-\frac{1}{2} ) \sigma_x
+        \end{equation}
+        となる。以下、1量子ビットのHamiltonianとして上式を用いる。
+        \subsubsection{Transmon}
+        先ほどの電荷量子ビットを拡張したものがトランズモンと呼ばれる量子ビットになる。このトランズモンは電荷量子ビットのジョセフソン接合に
+        キャパシタンス$C_S$をシャントした構造を持っている。電荷量子ビット同様にハミルトニアンを求めていくとジョセフソン接合のキャパシタンス$C_J$ が
+        $C_J \to C_J + C_S$に置き換わり
+        \begin{equation}
+            \begin{aligned}
+            \hat{\mathcal{H}} &=4 E_{C}\left(\hat{n}-n_{g}\right)^{2}-E_{J} \cos \hat{\phi} \\
+            E_{C}=& \frac{e^{2}}{2 C_{\Sigma}}, \quad C_{\Sigma}=C_{J}+C_{g}+C_{S}
+            \end{aligned}
+        \end{equation}
+        となる。$C_g,C_J$より比較的大きなキャパシタンスを用意することで$E_C$は$E_J$に対して小さくなる。\\
+        図()[a],[b]に$E_J/E_C$を変化させた際の$n_g$に対するエネルギー準位図を示す。$E_J$が$E_C$に対して大きくなるにしたがって、
+        ゲート電荷$n_g$に対する準位のエネルギー変化は小さくなり、電荷ゆらぎに対して強い準位系が形成されることになる。
+        反面、3準位目のエネルギーが下がることで、量子系への操作を行う際にこの準位への励起が起こりやすくなるという欠点がある。
+        励起の起こりやすさの指標として非調和性
+        \begin{equation}
+            \alpha = (E_{\ket{2}}-E_{\ket{1}})-(E_{\ket{1}}-E_{\ket{0}})
+        \end{equation}
+        があり、$\alpha$ の絶対値が大きいほど3準位目への励起が起こりにくいことを表す。
+        \begin{figure}[H]
+            \begin{center}
+                \begin{tabular}{c}
+                    \begin{minipage}{0.5\hsize}
+                        \begin{center}
+                            \includegraphics[width=7cm]{EJEC5.png}
+                        \end{center}
+                        \captionsetup{labelformat=empty,labelsep=none}
+                        \caption{[a] $E_J/E_C=5$のときの準位図}
+                    \end{minipage}
+                    
+                    \begin{minipage}{0.5\hsize}
+                        \begin{center}
+                            \includegraphics[width=7cm]{EJEC20.png}
+                        \end{center}
+                        \captionsetup{labelformat=empty,labelsep=none}
+                        \caption{[b]$E_J/E_C=20$のときの準位図}
+                    \end{minipage}
+                \end{tabular}
+                \caption{$E_J/E_C$の比の変化に対する準位図の遷移}
+            \end{center}
+        \end{figure}
+        \subsubsection{TunableなTramsmon}
+        ここまでで示した電荷量子ビットはゲート電圧$V_g$によって準位のエネルギーを変化させることができた。
+        しかしTransmonは電荷揺らぎに耐性を持った結果$V_g$に対してほとんど準位のエネルギーが変化しなくなる。
+        そこで、ジョセフソン接合の代わりにSQUIDを利用することを考える。
+        ()式の$E_J$が$E_J\cos(\pi \frac{\Phi}{\Phi_0})$に置き換わると考えればよく、量子ビットのハミルトニアンは
+        \begin{equation}
+            \begin{aligned}
+                \hat{\mathcal{H}} =&-\frac{E_J}{2}\cos(\pi \frac{\Phi}{\Phi_0})\sigma_z + 4E_C ( n_g-\frac{1}{2} ) \sigma_x\\
+                =& \frac{1}{2}\hbar \omega_q \sigma_z + \frac{1}{2}\epsilon \sigma_x\\
+                \omega_q:\mathrm{量子ビットの固有周波数},\quad & \epsilon : \mathrm{ゲート電圧}V_g\mathrm{によって制御可能なエネルギー}
+            \end{aligned}
+        \end{equation}
+        となり、外部磁束$\Phi$を制御することでTransmonの固有周波数は変調可能(Tunable)になる。
+        $\Phi$の変化に対するTransmonのエネルギー準位の変化を図()に示す。\\
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[width=8cm]{levels_tune.png}
+                \caption{磁束の変化に対するTunableなTransmonのエネルギー準位図($E_J/E_C = 80$)}
+            \end{center}
+        \end{figure}
+        $\frac{d\omega}{dt}=0$となる点(上の図におけるエネルギー準位上の磁束0の点)を最適動作点といい、状態がこの点上にあるとき量子ビットは磁束の変化に最も強い。
+        Tunableな量子ビットでは固有周波数が磁束に応じて変化するが、通常固有周波数というときには最適動作点における$\ket{0}$状態と$\ket{1}$状態の固有エネルギー差を示す。
+        以下、特に断らない限り「量子ビット」はこのTunableなTransmonをさすこととする。
+
     \subsection{他素子との結合}
         \subsubsection{共振器との結合}
+        図()のような、トランズモンとLC共振器がキャパシタンス$C_g$によって結合した系を考える。
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[width=8cm]{reso_and_Xmon.png}
+                \caption{共振器と結合した量子ビット}
+            \end{center}
+        \end{figure}
+        この系のHamiltonianは以下のように記述される。(詳細な導出は()に示す)
+        \begin{equation}
+            \mathcal{H} / \hbar=\sum_{j} \omega_{j}\ket{j}\bra{j}+\omega_{r} a^{\dagger} a+\sum_{i, j} g_{i, j}\ket{j}\bra{j}(a+a^{\dagger})
+        \end{equation}
+        ここで
+        \begin{equation}
+            \begin{aligned}
+            g_{i j} &=2 \beta V_{r m s}^{0}\bra{i}n\ket{j}\\
+            \omega_{j} &=\left(\omega_{q}^{01}-\frac{\alpha}{2}\right) j+\frac{\alpha}{2} j^{2} \\
+            V_{r m s}^{0} &=\sqrt{\frac{\hbar \omega_{r}}{2 C_{r}}} \\
+            \beta &=\frac{C_{g}}{C_{\Sigma}} \\
+            C_{\Sigma} &=C_{S}+C_{g}+C_{J}
+            \end{aligned}
+        \end{equation}
+        行列要素$\bra{i}n\ket{j}$についてはトランズモンの隣接準位以外の共振器との結合は実効的に無視する事ができる。よって結合をトランズモンの隣接準位に限り回転波近似を行いトランズモンの消滅演算子$c$ も定義すると
+        \begin{equation}
+            \begin{array}{c}
+            c=\sum_{j} \sqrt{j+1}|j\rangle\langle j+1| \\
+            H_{J C} / \hbar=\sum_{j} \omega_{j}|j\rangle\langle j|+\omega_{r} a^{\dagger} a+g_{01}\left(c a^{\dagger}+c^{\dagger} a\right)
+            \end{array}
+            \end{equation}
+        となる。この式はJayens-Cummings ハミルトニアンと呼ばれている。またこのハミルトニアンを二準位近似で表現すると
+        \begin{equation}
+            \mathcal{H} / \hbar=\frac{1}{2} \omega_{q} \sigma_{z}+\omega_{r} a^{\dagger} a+g_{01}\left(a^{\dagger} \sigma_{-}+a \sigma_{+}\right)
+        \end{equation}
+        となる。第一項は量子ビットのみ、第2項は共振器のみ、第3項は相互作用項である。
+        最適動作点における量子ビットの周波数$\omega_q^{01}$が$\omega_r$より大きい場合には、Jaynes-Cummings ハミルトニアンの磁束に対するエネルギーバンド図は図()のようになる。
+        \begin{figure}[H]
+            \begin{center}
+                \begin{tabular}{c}
+                    \begin{minipage}{0.5\hsize}
+                        \begin{center}
+                            \includegraphics[width=7.5cm]{1Q1R_plot_closspattern.png}
+                        \end{center}
+                        %\captionsetup{labelformat=empty,labelsep=none}
+                        \caption{$\omega_r<\omega_q^{01}$の場合の準位図}
+                    \end{minipage}
+                    
+                    \begin{minipage}{0.5\hsize}
+                        \begin{center}
+                            \includegraphics[width=7.5cm]{1Q1R_plot_closspattern_zoomup.png}
+                        \end{center}
+                        %\captionsetup{labelformat=empty,labelsep=none}
+                        \caption{拡大:スプリッティング}
+                    \end{minipage}
+                \end{tabular}
+            \end{center}
+        \end{figure}
+        $\omega_r=\omega_q^{01}$となる磁束量において準位のスプリッティングが起こっていることがわかる。スプリッティング幅は$2g^{01}$に等しく、実験的にはスプリッティングの観測から結合定数 $2g^{01}$を知ることができる。
+        一方、$\omega_q^{01}<\omega_r$となる場合にはスプリッティングは起こらない。(図())
+        \begin{figure}[H]
+            \begin{center}
+                \begin{tabular}{c}
+                    \begin{minipage}{0.5\hsize}
+                        \begin{center}
+                            \includegraphics[width=7.5cm]{1Q1R_plot_overpattern.png}
+                        \end{center}
+                        %\captionsetup{labelformat=empty,labelsep=none}
+                        \caption{$\omega_r>\omega_q^{01}$の場合の準位図}
+                    \end{minipage}
+                    
+                    \begin{minipage}{0.5\hsize}
+                        \begin{center}
+                            \includegraphics[width=7.5cm]{1Q1R_plot_overpattern_zoomup.png}
+                        \end{center}
+                        %\captionsetup{labelformat=empty,labelsep=none}
+                        \caption{拡大:共振器準位の周期的変化}
+                    \end{minipage}
+                \end{tabular}
+            \end{center}
+        \end{figure}
+        \subsubsection{共振器-量子ビット結合を利用した分散読み出し}
+        次に量子ビットを読み出す方法として分散読出しが上げられる。共振器の共振周波数と量子ビットの周波数の差$\Delta$が結合定数よりも十分離れた分散領域$(\Delta = |\omega_r − \omega_q|\gg g)$ において有効になる。
+        式(2.80) に対してユニタリ行列
+        \begin{equation}
+            U=\exp \left[\gamma\left(a^{\dagger} \sigma_{-}-a \sigma_{+}\right)\right], \quad \gamma=\frac{g_{01}}{\omega_{q}-\omega_{r}}
+        \end{equation}
+        による変換を行うと
+        \begin{equation}
+            U^\dagger \mathcal{H} U/ \hbar=\left(\omega_{r}+\frac{g^{2}}{\omega_q-\omega_r}\sigma_{z}\right) a^{\dagger} a+\frac{1}{2}\left(\omega_{q}+\frac{g^{2}}{\omega_q-\omega_r}\right) \sigma_{z}
+        \end{equation}
+        となる。このハミルトニアンにおいて、
+        \begin{equation}
+            \chi = \frac{g^2}{\omega_q-\omega_r}
+        \end{equation}
+        とすると
+        \begin{equation}
+            \omega_r \to \omega_r + \chi \sigma_z
+        \end{equation}
+        と読み出し周波数が$\chi$だけシフトする。このシフトの方向は$\sigma_z$の期待値、すなわち量子ビットの状態によって変化するため
+        共振器の周波数を通じて量子ビットが0か1かの測定を行うことができる。
+
         \subsubsection{量子ビットとの結合}
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[width=8cm]{Xmon_and_Xmon.png}
+                \caption{2量子ビット直接結合}
+            \end{center}
+        \end{figure}
+        図()のように量子ビット2つがキャパシタンス$Cc$によって直接結合された系を考える。\footnote{ここで説明するキャパシタンスによる直接結合以外に、量子ビット同士の結合には共振器(bus resonator)を介した結合がある。また本研究ではCcは固定されているが、可変結合器を用いてCcの大きさを変えることができるものもある。}
+        詳しい計算は割愛するが、この系のHamiltonianは先ほどのJayens-Cummings hamiltonianのうち共振器のみの項を量子ビット項に置き換え、相互作用項における共振器の昇降演算子を量子ビットの昇降演算子に置き換えることで記述される。
+        キャパシタンス$Cc$による結合定数を$g$とおくとHamiltonianは
+        \begin{equation}
+            \mathcal{H}/\hbar = \frac{1}{2} \omega_{q1} \sigma_{z1} +\frac{1}{2} \omega_{q2} \sigma_{z2} + g(\sigma_{+1}\sigma_{-2} + \sigma_{-1}\sigma_{+2})
+        \end{equation}
+        と求まる。相互作用項の$(\sigma_{+1}\sigma_{-2} + \sigma_{-1}\sigma_{+2})$は
+        \begin{equation}
+            \sigma_{+1}\sigma_{-2} + \sigma_{-1}\sigma_{+2} = \frac{1}{2}(\sigma_{x1}\sigma_{x2} + \sigma_{y1}\sigma_{y2})
+        \end{equation}
+        と書けるため、XX+YY相互作用と呼ばれる。
+
     \subsection{デコヒーレンス}
-        \subsubsection{$T_1$,$T_2$,$T_2^E$}
+        \subsubsection{$T_1$}
+        理想的な量子ビットは状態を$\ket{1}$におくと次の状態変化を与えるまでは$\ket{1}$の状態を維持し続ける。
+        しかし実際の量子ビットにおいては、外部環境への自然放出によって徐々に励起状態のエネルギーは減衰し、0になっていく。
+        これをエネルギー緩和もしくはDepolarizingという。量子ビットの$\ket{1}$状態の存在確率が$1/e$になるまでの時間をエネルギー緩和時間といい
+        $T_1$で表す。減衰レート(depolarizing rate) $\Gamma_{1}$とは以下の関係にある。
+        \begin{equation}
+            \frac{1}{T_1} = \Gamma_{1}
+        \end{equation}
+        超伝導量子ビットの$T_1$を大きくする工夫は近年進んできており、2020年12月現在では()[μs]程度である。
+        状態のエネルギーがこの時間スケールで緩和することを考えると、多数回量子ビットゲート(次節)を作用させる際には1回の操作にかかる時間は短いほうが望ましい。
+        \subsubsection{,$T_2$,$T_2^E$}
+        エネルギー緩和以外の状態の
+        
 
 \section{量子ビットゲート}
+    この節では、量子回路モデルの中で演算に用いられる1,2qubitゲート及びその実装・制御方法について述べる。
+    \subsubsection{量子回路モデル}
+    ゲート型量子コンピュータにおける演算は、初期状態としてnビットの量子ビット(通常$\ket{0}^{\otimes N}$)を用意し
+    行わせる演算に対応するユニタリ変換を行わせ(図左)、最後にn量子ビット全て(または一部ビット)を測定する量子回路モデルに則って行われる。
+    ビット数の増加に伴い、ユニタリ演算$U$の表現は複雑になることが予想されるが、実は任意のユニタリ演算は
+    Solovay-Kitaevの定理により後述する特定の1量子ビット操作と2量子ビット操作の組に分解できることが知られている。
+    (図右)\\
+    複数の操作$U_1,U_2,..,U_k$が量子ビットに対して順次実行される場合、ユニタリ演算$U$は
+    \begin{equation}
+        U=U_k \dots U_3U_2U_1
+    \end{equation}
+    と書ける。量子回路モデルの中で行われるユニタリ演算を特に量子ゲートと呼ぶ。
     \subsection{1qubitゲート}
+    1量子ビットのゲートはすべて、前節で示したBlochベクトルをx軸,y軸,z軸周りに回転させる回転ゲート
+    \begin{equation}
+        \begin{array}{l}
+        R_{x}(\theta)=e^{-i \frac{\theta}{2} \sigma_{x}}=\left(\begin{array}{cc}
+        \cos (\theta / 2) & -i \sin (\theta / 2) \\
+        -i \sin (\theta / 2) & \cos (\theta / 2)
+        \end{array}\right) \\
+        R_{y}(\theta)=e^{-i \frac{\theta}{2} \sigma_{y}}=\left(\begin{array}{cc}
+        \cos (\theta / 2) & -\sin (\theta / 2) \\
+        \sin (\theta / 2) & \cos (\theta / 2)
+        \end{array}\right) \\
+        R_{z}(\theta)=e^{-i \frac{\theta}{2} \sigma_{z}}=\left(\begin{array}{cc}
+        e^{-i \theta / 2} & 0 \\
+        0 & e^{i \theta / 2}
+        \end{array}\right)
+        \end{array}
+        \end{equation}
+    からなる。$\theta$はその軸周りの回転角を表す。
         \subsubsection{X,Y軸回転}
+        X軸回転ゲートを実装するには、Hamiltonianが()式で与えられる量子ビット系においてゲート電圧$V_g$に代わって電磁波による振幅$\Omega$,周波数$\omega$,位相$\phi$の交流電圧を与えることで実現される。
+        すなわち()式において$\epsilon \to \hbar\Omega \cos(\omega t + \phi)$と変化することで実験室系のハミルトニアンは
+        \begin{equation}
+            \mathcal{H/\hbar}=\frac{1}{2} \omega_{q} \sigma_{z}+ \Omega \cos(\omega t + \phi)\sigma_{x}
+        \end{equation}
+        このハミルトニアンに回転座標系に移行するユニタリ行列$U=e^{-i\omega t}$を作用させると
+        \begin{equation}
+            \begin{aligned}
+                U^\dagger \sigma_x U \\
+                = \sigma_x+(i\omega t/2)[\sigma_z,\sigma_x]+\frac{1}{2!}
+            \end{aligned}
+        \end{equation}
+        またXゲート,Yゲートを組み合わせてできる重要な1量子ビットゲートとして、前節で$\sigma_x$項と$\sigma_z$項の入れ替えを行う際にも作用させた変換であるHadamardゲート
+        \begin{equation}
+            H=\left(
+            \begin{array}{cc}
+                1 & 0 \\
+                0 & -1 \\
+            \end{array}
+            \right)
+        \end{equation}
+        がある。これはBloch球上のベクトルをX軸周りに45度,Y軸周りに45度回転させるゲートである。$\ket{0},\ket{1}$に対して作用させると
+        \begin{equation}
+            H \ket{0} = \ket{+}, H \ket{1} = \ket{-}
+        \end{equation}
+        となり、確率振幅$\frac{1}{\sqrt2}$ずつの重ね合わせ状態が生成される。このため、重ね合わせ状態を作るためにHadamardゲートは頻繁に利用される。
+
         \subsubsection{Z軸回転}
-        \subsubsection{その他の重要1qubitゲート}
+        
     \subsection{CZゲート}
         \subsubsection{CZゲートの理論}
         \subsubsection{実装上の課題1.CZゲートの断熱・非断熱過程}
+        ここまでで、CZゲートがSQUID近傍に流れる電流パルスの制御によって実現できることを述べた。
+        しかし上記のようなパルスを実装するにあたっては課題もある。
+        その一つが、パルス電流値の急な立ち上げに伴うNon-Adiabatic Errorと呼ばれるエラーの発生である。
+        簡単のため、Hamiltonianが $\hat{H}$が()式で表される1量子ビットを例に考える。
+        $\hat{H}$を図()のように固有値エネルギー$E=\sqrt{H_x^2+H_z^2}$を持つベクトルとして考え、$H_x,H_z$成分に分解、
+        $H_z$成分は固定され$H_x$成分が可変とする。ブロッホ球のx軸,z軸とハミルトニアンのx軸,z軸を重ねると、ハミルトニアンが変化しない場合において
+        状態ベクトルはハミルトニアンの固有ベクトルと同じ向きを向く。
+        ハミルトニアンを表すベクトルとz軸がなす角を$\theta$とし、このベクトルが
+        角度$\Delta \theta$でのラーモア歳差運動を起こす。
+        Rotating frameに移行し、なおかつハミルトニアンの固有ベクトルの向きが変化することを考えた座標系上で考えると
+        ハミルトニアンの固有ベクトルと状態ベクトルのなす角は
+        
+        と表される。
+        Non-Adiabaticエラーは$\Delta \theta$を用いて
+        \begin{equation}
+            a
+        \end{equation}
+        と表されるため、
+        
+        通常、電流パルス発生器内部において電流値が変化する際には
+        有限の立ち上げ時間$t_{ramp}$を伴って電流値が変化する。$t_{ramp}$が小さい場合にはハミルトニアンの固有ベクトルの変化
         \subsubsection{実装上の課題2.低周波磁束ノイズ}
-        \subsubsection{パルス制御}
+
+    \subsection{AdaibaticなCZゲート}
+
+
 
         
         

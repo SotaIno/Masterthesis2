@@ -1,4 +1,4 @@
-This is e-upTeX, Version 3.14159265-p3.8.3-u1.26-191112-2.6 (utf8.uptex) (TeX Live 2020/W32TeX) (preloaded format=uplatex 2021.1.19)  9 FEB 2021 13:53
+This is e-upTeX, Version 3.14159265-p3.8.3-u1.26-191112-2.6 (utf8.uptex) (TeX Live 2020/W32TeX) (preloaded format=uplatex 2021.1.19)  18 FEB 2021 13:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -771,7 +771,7 @@ File: ./img/Joseph.png Graphic file (type bmp)
 File: ./img/Joseph_real.png Graphic file (type bmp)
 <./img/Joseph_real.png>
 
-Overfull \hbox (15.33334pt too wide) in paragraph at lines 413--430
+Overfull \hbox (15.33334pt too wide) in paragraph at lines 418--435
  [][][] 
  []
 
@@ -780,62 +780,174 @@ File: ./img/DCsquid.png Graphic file (type bmp)
 [13]
 File: ./img/CPB.png Graphic file (type bmp)
 <./img/CPB.png>
- [14]) [15] [16]
+ [14] [15]
+File: ./img/EJEC2.png Graphic file (type bmp)
+<./img/EJEC2.png>
+ [16]
+File: ./img/EJEC5.png Graphic file (type bmp)
+<./img/EJEC5.png>
+File: ./img/EJEC20.png Graphic file (type bmp)
+<./img/EJEC20.png>
+
+Overfull \hbox (15.33334pt too wide) in paragraph at lines 610--627
+ [][][] 
+ []
+
+[17]
+File: ./img/levels_tune.png Graphic file (type bmp)
+<./img/levels_tune.png>
+ [18]
+File: ./img/reso_and_Xmon.png Graphic file (type bmp)
+<./img/reso_and_Xmon.png>
+ [19]
+File: ./img/1Q1R_plot_closspattern.png Graphic file (type bmp)
+<./img/1Q1R_plot_closspattern.png>
+
+Overfull \hbox (5.52264pt too wide) in paragraph at lines 695--696
+ [] 
+ []
+
+File: ./img/1Q1R_plot_closspattern_zoomup.png Graphic file (type bmp)
+<./img/1Q1R_plot_closspattern_zoomup.png>
+
+Overfull \hbox (5.52264pt too wide) in paragraph at lines 703--704
+ [] 
+ []
+
+
+Overfull \hbox (15.33334pt too wide) in paragraph at lines 692--709
+ [][][] 
+ []
+
+File: ./img/1Q1R_plot_overpattern.png Graphic file (type bmp)
+<./img/1Q1R_plot_overpattern.png>
+
+Overfull \hbox (5.52264pt too wide) in paragraph at lines 718--719
+ [] 
+ []
+
+File: ./img/1Q1R_plot_overpattern_zoomup.png Graphic file (type bmp)
+<./img/1Q1R_plot_overpattern_zoomup.png>
+
+Overfull \hbox (5.52264pt too wide) in paragraph at lines 726--727
+ [] 
+ []
+
+
+Overfull \hbox (15.33334pt too wide) in paragraph at lines 715--732
+ [][][] 
+ []
+
+[20]
+File: ./img/Xmon_and_Xmon.png Graphic file (type bmp)
+<./img/Xmon_and_Xmon.png>
+ [21] [22] [23]) [24]
 第3章
-(./implementation.tex) [17
+(./simpart.tex) [25
 
 ]
 第4章
-(./measurement.tex) [18
+(./implementation.tex
+File: ./img/Chippic.png Graphic file (type bmp)
+<./img/Chippic.png>
+ [26
 
-]
+] [27] [28]
+File: ./img/PLASSYS_stage0.png Graphic file (type bmp)
+<./img/PLASSYS_stage0.png>
+
+Overfull \hbox (39.49805pt too wide) in paragraph at lines 83--84
+ [] 
+ []
+
+File: ./img/PLASSYS_stage1.png Graphic file (type bmp)
+<./img/PLASSYS_stage1.png>
+
+Overfull \hbox (39.49805pt too wide) in paragraph at lines 89--90
+ [] 
+ []
+
+File: ./img/PLASSYS_stage2.png Graphic file (type bmp)
+<./img/PLASSYS_stage2.png>
+
+Overfull \hbox (39.49805pt too wide) in paragraph at lines 95--96
+ [] 
+ []
+
+[29]
+File: ./img/Ino_test_up.jpg Graphic file (type bmp)
+<./img/Ino_test_up.jpg>
+File: ./img/Ino_test_upL.jpg Graphic file (type bmp)
+<./img/Ino_test_upL.jpg>
+
+Overfull \hbox (15.33334pt too wide) in paragraph at lines 107--124
+ [][][] 
+ []
+
+File: ./img/sample_from_above.jpg Graphic file (type bmp)
+<./img/sample_from_above.jpg>
+[30]
+File: ./img/zoomup_SMA_PCB.jpg Graphic file (type bmp)
+<./img/zoomup_SMA_PCB.jpg>
+File: ./img/Kansei1.jpg Graphic file (type bmp)
+<./img/Kansei1.jpg>
+
+Overfull \hbox (15.33334pt too wide) in paragraph at lines 140--157
+ [][][] 
+ []
+
+) [31]
 第5章
-(./result.tex) [19
+(./measurement.tex) [32
 
 ]
 第6章
-(./discussion.tex) [20
+(./result.tex) [33
 
 ]
 第7章
-(./conclusion.tex) [21
+(./discussion.tex) [34
 
 ]
 第8章
-(./outlook.tex) [22
+(./conclusion.tex) [35
 
 ]
 第9章
-(./apology.tex) [23
+(./outlook.tex) [36
 
 ]
 第10章
-(./appendix.tex [24
-
-]) [25]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 110.
- [26
+(./apology.tex) [37
 
 ]
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 110.
+第11章
+(./appendix.tex [38
+
+]) [39]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 115.
+ [40
+
+]
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 115.
 \BKM@file=\write6
 \openout6 = `main.out.ps'.
 
  (wkdir/main.aux (wkdir/abstract.aux))
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 110.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 110.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 115.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 115.
 Package logreq Info: Writing requests to 'main.run.xml'.
 \openout1 = `main.run.xml'.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 110.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 115.
  ) 
 Here is how much of TeX's memory you used:
- 16013 strings out of 481134
- 268966 string characters out of 5920501
+ 16100 strings out of 481134
+ 270874 string characters out of 5920501
  934477 words of memory out of 5000000
- 31793 multiletter control sequences out of 15000+600000
+ 31858 multiletter control sequences out of 15000+600000
  577614 words of font info for 101 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  41i,17n,46p,1438b,1193s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on wkdir/main.dvi (27 pages, 97384 bytes).
+Output written on wkdir/main.dvi (41 pages, 155540 bytes).

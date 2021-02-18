@@ -1,18 +1,18 @@
 [0] Config.pm:304> INFO - This is Biber 2.14
 [0] Config.pm:307> INFO - Logfile is 'wkdir\main.blg'
-[80] biber-MSWIN32:322> INFO - === 
-[101] Biber.pm:415> INFO - Reading 'wkdir\main.bcf'
-[220] Biber.pm:943> INFO - Found 2 citekeys in bib section 0
-[240] Biber.pm:4256> INFO - Processing section 0
-[240] Utils.pm:75> INFO - Globbing data source 'bibs.bib'
-[251] Utils.pm:91> INFO - Globbed data source 'bibs.bib' to bibs.bib
-[266] Biber.pm:4455> INFO - Looking for bibtex format file 'bibs.bib' for section 0
-[270] bibtex.pm:1653> INFO - LaTeX decoding ...
-[306] bibtex.pm:1471> INFO - Found BibTeX data source 'bibs.bib'
-[379] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[380] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[380] Biber.pm:4084> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[380] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
-[383] bbl.pm:652> INFO - Writing 'wkdir\main.bbl' with encoding 'UTF-8'
-[384] bbl.pm:653> INFO - Converting UTF-8 to TeX macros on output to .bbl
-[392] bbl.pm:755> INFO - Output to wkdir\main.bbl
+[114] biber-MSWIN32:322> INFO - === 
+[144] Biber.pm:415> INFO - Reading 'wkdir\main.bcf'
+[307] Biber.pm:943> INFO - Found 2 citekeys in bib section 0
+[335] Biber.pm:4256> INFO - Processing section 0
+[335] Utils.pm:75> INFO - Globbing data source 'bibs.bib'
+[351] Utils.pm:91> INFO - Globbed data source 'bibs.bib' to bibs.bib
+[376] Biber.pm:4455> INFO - Looking for bibtex format file 'bibs.bib' for section 0
+[383] bibtex.pm:1653> INFO - LaTeX decoding ...
+[413] bibtex.pm:1471> INFO - Found BibTeX data source 'bibs.bib'
+[511] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[512] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[512] Biber.pm:4084> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[512] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
+[516] bbl.pm:652> INFO - Writing 'wkdir\main.bbl' with encoding 'UTF-8'
+[516] bbl.pm:653> INFO - Converting UTF-8 to TeX macros on output to .bbl
+[527] bbl.pm:755> INFO - Output to wkdir\main.bbl

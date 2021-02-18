@@ -262,8 +262,48 @@ INPUT ./img/DCsquid.png
 INPUT extractbb -B cropbox -O ./img/DCsquid.png
 INPUT ./img/CPB.png
 INPUT extractbb -B cropbox -O ./img/CPB.png
+INPUT ./img/EJEC2.png
+INPUT extractbb -B cropbox -O ./img/EJEC2.png
+INPUT ./img/EJEC5.png
+INPUT extractbb -B cropbox -O ./img/EJEC5.png
+INPUT ./img/EJEC20.png
+INPUT extractbb -B cropbox -O ./img/EJEC20.png
+INPUT ./img/levels_tune.png
+INPUT extractbb -B cropbox -O ./img/levels_tune.png
+INPUT ./img/reso_and_Xmon.png
+INPUT extractbb -B cropbox -O ./img/reso_and_Xmon.png
+INPUT ./img/1Q1R_plot_closspattern.png
+INPUT extractbb -B cropbox -O ./img/1Q1R_plot_closspattern.png
+INPUT ./img/1Q1R_plot_closspattern_zoomup.png
+INPUT extractbb -B cropbox -O ./img/1Q1R_plot_closspattern_zoomup.png
+INPUT ./img/1Q1R_plot_overpattern.png
+INPUT extractbb -B cropbox -O ./img/1Q1R_plot_overpattern.png
+INPUT ./img/1Q1R_plot_overpattern_zoomup.png
+INPUT extractbb -B cropbox -O ./img/1Q1R_plot_overpattern_zoomup.png
+INPUT ./img/Xmon_and_Xmon.png
+INPUT extractbb -B cropbox -O ./img/Xmon_and_Xmon.png
+INPUT simpart.tex
+INPUT simpart.tex
 INPUT implementation.tex
 INPUT implementation.tex
+INPUT ./img/Chippic.png
+INPUT extractbb -B cropbox -O ./img/Chippic.png
+INPUT ./img/PLASSYS_stage0.png
+INPUT extractbb -B cropbox -O ./img/PLASSYS_stage0.png
+INPUT ./img/PLASSYS_stage1.png
+INPUT extractbb -B cropbox -O ./img/PLASSYS_stage1.png
+INPUT ./img/PLASSYS_stage2.png
+INPUT extractbb -B cropbox -O ./img/PLASSYS_stage2.png
+INPUT ./img/Ino_test_up.jpg
+INPUT extractbb -B cropbox -O ./img/Ino_test_up.jpg
+INPUT ./img/Ino_test_upL.jpg
+INPUT extractbb -B cropbox -O ./img/Ino_test_upL.jpg
+INPUT ./img/sample_from_above.jpg
+INPUT extractbb -B cropbox -O ./img/sample_from_above.jpg
+INPUT ./img/zoomup_SMA_PCB.jpg
+INPUT extractbb -B cropbox -O ./img/zoomup_SMA_PCB.jpg
+INPUT ./img/Kansei1.jpg
+INPUT extractbb -B cropbox -O ./img/Kansei1.jpg
 INPUT measurement.tex
 INPUT measurement.tex
 INPUT result.tex
