@@ -570,10 +570,10 @@
         となる。固有状態は$\ket{0}$,$\ket{1}$であったほうが都合が良いので、
         Hadamard変換
         \begin{equation}
-            H=\left(
+            H=\frac{1}{\sqrt2}\left(
             \begin{array}{cc}
-                1 & 0 \\
-                0 & -1 \\
+                1 & 1 \\
+                1 & -1 \\
             \end{array}
             \right)
         \end{equation}
@@ -709,7 +709,7 @@
             \end{center}
         \end{figure}
         $\omega_r=\omega_q^{01}$となる磁束量において準位のスプリッティングが起こっていることがわかる。スプリッティング幅は$2g^{01}$に等しく、実験的にはスプリッティングの観測から結合定数 $2g^{01}$を知ることができる。
-        一方、$\omega_q^{01}<\omega_r$となる場合にはスプリッティングは起こらない。(図())
+        一方、$\omega_q^{01}<\omega_r$となる場合にはスプリッティングは起こらない(図())が、共振器準位が量子ビットの$\ket{2}$準位と交わる箇所付近で波打つため共振器と量子ビットの状態が結合しているのが分かる。
         \begin{figure}[H]
             \begin{center}
                 \begin{tabular}{c}
@@ -771,19 +771,20 @@
         \end{equation}
         と書けるため、XX+YY相互作用と呼ばれる。
 
-    \subsection{デコヒーレンス}
-        \subsubsection{$T_1$}
+    \subsection{量子ビットのエネルギー・位相緩和}
+        \subsubsection{$T_1$,$T_2$,$T_2^E$}
         理想的な量子ビットは状態を$\ket{1}$におくと次の状態変化を与えるまでは$\ket{1}$の状態を維持し続ける。
         しかし実際の量子ビットにおいては、外部環境への自然放出によって徐々に励起状態のエネルギーは減衰し、0になっていく。
-        これをエネルギー緩和もしくはDepolarizingという。量子ビットの$\ket{1}$状態の存在確率が$1/e$になるまでの時間をエネルギー緩和時間といい
+        これをエネルギー緩和(Depolarizing)という。量子ビットの$\ket{1}$状態の存在確率が$1/e$になるまでの時間をエネルギー緩和時間といい
         $T_1$で表す。減衰レート(depolarizing rate) $\Gamma_{1}$とは以下の関係にある。
         \begin{equation}
             \frac{1}{T_1} = \Gamma_{1}
         \end{equation}
-        超伝導量子ビットの$T_1$を大きくする工夫は近年進んできており、2020年12月現在では()[μs]程度である。
+        超伝導量子ビットの$T_1$を大きくする工夫は近年進んできており、2021年2月現在で数十マイクロ秒程度である。
         状態のエネルギーがこの時間スケールで緩和することを考えると、多数回量子ビットゲート(次節)を作用させる際には1回の操作にかかる時間は短いほうが望ましい。
-        \subsubsection{,$T_2$,$T_2^E$}
-        エネルギー緩和以外の状態の
+        エネルギー緩和以外に量子状態の情報が失われる過程として、位相緩和(Dephasing)がある。
+        系の周波数が何らかの影響で回転座標系の周波数から離調したとすると、系の位相はz軸の周りに回転を始める。
+        これにより系の位相の情報が失われるまでの時間を位相緩和時間といい、$T_2$で表す。
         
 
 \section{量子ビットゲート}
@@ -791,6 +792,12 @@
     \subsubsection{量子回路モデル}
     ゲート型量子コンピュータにおける演算は、初期状態としてnビットの量子ビット(通常$\ket{0}^{\otimes N}$)を用意し
     行わせる演算に対応するユニタリ変換を行わせ(図左)、最後にn量子ビット全て(または一部ビット)を測定する量子回路モデルに則って行われる。
+    \begin{figure}[H]
+        \begin{center}
+            \includegraphics[width=12cm]{QCmodel.png}
+            \caption{量子回路モデル}
+        \end{center}
+    \end{figure}
     ビット数の増加に伴い、ユニタリ演算$U$の表現は複雑になることが予想されるが、実は任意のユニタリ演算は
     Solovay-Kitaevの定理により後述する特定の1量子ビット操作と2量子ビット操作の組に分解できることが知られている。
     (図右)\\
@@ -822,21 +829,51 @@
         X軸回転ゲートを実装するには、Hamiltonianが()式で与えられる量子ビット系においてゲート電圧$V_g$に代わって電磁波による振幅$\Omega$,周波数$\omega$,位相$\phi$の交流電圧を与えることで実現される。
         すなわち()式において$\epsilon \to \hbar\Omega \cos(\omega t + \phi)$と変化することで実験室系のハミルトニアンは
         \begin{equation}
-            \mathcal{H/\hbar}=\frac{1}{2} \omega_{q} \sigma_{z}+ \Omega \cos(\omega t + \phi)\sigma_{x}
+            \mathcal{H}=\frac{1}{2}\hbar \omega_{q} \sigma_{z}+ \hbar \Omega \cos(\omega t + \phi)\sigma_{x}
         \end{equation}
         このハミルトニアンに回転座標系に移行するユニタリ行列$U=e^{-i\omega t}$を作用させると
         \begin{equation}
             \begin{aligned}
-                U^\dagger \sigma_x U \\
-                = \sigma_x+(i\omega t/2)[\sigma_z,\sigma_x]+\frac{1}{2!}
+            U^{\dagger} \sigma_{x} U=&\sigma_{x}+(i \omega t / 2)\left[\sigma_{z}, \sigma_{x}\right]+\frac{1}{2 !}(i \omega t / 2)^{2}\left[\sigma_{z},\left[\sigma_{z}, \sigma_{x}\right]\right)+\frac{1}{3 !}(i \omega t / 2)^{3}\left[\sigma_{z},\left[\sigma_{z},\left[\sigma_{z}, \sigma_{x}\right]\right]\right]+\ldots \\
+            =& \sigma_{x}+(-\omega t) \sigma_{y}-\frac{1}{2 !}(-\omega t)^{2} \sigma_{x}-\frac{1}{3 !}(-\omega t)^{3} \sigma_{y}+\\
+            =&\left(1-\frac{1}{2 !}(\omega t)^{2}+\cdots\right) \sigma_{x}-\left((\omega t)-\frac{1}{3 !}(\omega t)^{3}+\ldots\right) \sigma_{y} \\
+            =& \cos (\omega t) \sigma_{x}-\sin (\omega t) \sigma_{y}
             \end{aligned}
         \end{equation}
+        となることから
+        \begin{equation}
+            \begin{aligned}
+            \mathcal{H}_{\text {rot }} &=U^{\dagger} \mathcal{H} U \\
+            &=\hbar \Omega \cos (\omega t+\phi)\left[\cos (\omega t) \sigma_{x}-\sin (\omega t) \sigma_{y}\right] \\
+            &=\frac{1}{2} \hbar \Omega[\cos (2 \omega t+\phi)+\cos (\phi)] \sigma_{x}-\frac{1}{2} h \Omega[\sin (2 \omega t+\phi)-\sin (\phi)] \sigma_{y}
+            \end{aligned}
+        \end{equation}
+        が得られる。さらに回転波近似によって$2\omega t$の振動項を無視することにより
+        \begin{equation}
+            \mathcal{H}_{\text{rot}} \simeq \frac{1}{2} \hbar \Omega \cos (\phi) \sigma_{x}+\frac{1}{2} \hbar \Omega \sin (\phi) \sigma_{y}
+        \end{equation}
+        を得る。この回転座標系のHamiltonianにおいて$\phi=0$,$\phi=\pi/2$の場合には特に
+        \begin{equation}
+            \mathcal{H}_{\text {rot }}=\left\{\begin{array}{ll}
+            \hbar \Omega \sigma_{x} / 2 & (\phi=0) \\
+            \hbar \Omega \sigma_{y} / 2 & (\phi=\pi / 2)
+            \end{array}\right.
+        \end{equation}
+        となる。それぞれの場合の系の時間発展演算子は
+        \begin{equation}
+            U = \exp \left(-\frac{i}{\hbar} \mathcal{H}_{\mathrm{rot}} t\right)=\left\{\begin{array}{ll}
+            e^{-i \Omega t \sigma_{x} / 2} & (\phi=0) \\
+            e^{-i \Omega t \sigma_{y} / 2} & (\phi=\pi / 2)
+            \end{array}\right.
+        \end{equation}
+        と記述でき、これらは状態ベクトルを回転角$\theta=\Omega t$だけX軸もしくはY軸周りに回転させる変換である。
+        したがってX,Yゲートは与えるマイクロ波の振幅と長さの調節により回転角を、位相$\phi$の0か$\pi/2$かの選択により回転軸を変えることができる。\\
         またXゲート,Yゲートを組み合わせてできる重要な1量子ビットゲートとして、前節で$\sigma_x$項と$\sigma_z$項の入れ替えを行う際にも作用させた変換であるHadamardゲート
         \begin{equation}
-            H=\left(
+            H=\frac{1}{\sqrt2}\left(
             \begin{array}{cc}
-                1 & 0 \\
-                0 & -1 \\
+                1 & 1 \\
+                1 & -1 \\
             \end{array}
             \right)
         \end{equation}
@@ -847,34 +884,93 @@
         となり、確率振幅$\frac{1}{\sqrt2}$ずつの重ね合わせ状態が生成される。このため、重ね合わせ状態を作るためにHadamardゲートは頻繁に利用される。
 
         \subsubsection{Z軸回転}
+        z軸回転ゲートは、量子ビットの周波数$\omega_q$と回転座標系の角速度$\omega_{rot}$との差$\Delta = \omega_q-\omega_{rot}$が生じる際にかけることができる。
+        Hamiltonianは
+        \begin{equation}
+            \mathcal{H}_{\mathrm{rot}} = \frac{1}{2} \hbar \left(\omega_q-\omega_{rot}\right)\sigma_z
+        \end{equation}
+        となるため、系のユニタリ時間発展は
+        \begin{equation}
+            U=\exp \left(-\frac{i}{\hbar} \mathcal{H}_{\mathrm{rot}} t\right)\sigma_z = \exp \left(-i\Delta t\right) \sigma_z
+        \end{equation}
+        と記述され、量子ビットの周波数を$t_g=\phi /\Delta$だけ$\Delta$変調することで任意の回転角$\phi$のZ回転ゲートがかかる。
+        Tunableな量子ビットでは、SQUID内の磁束量を電流バイアスを通じて変化させることで実現できる。
+        なお磁束が制御できない電荷量子ビットでも、X回転ゲートとY回転ゲートを組み合わせることで仮想的なZ回転ゲートをかけることができる。
         
     \subsection{CZゲート}
-        \subsubsection{CZゲートの理論}
-        \subsubsection{実装上の課題1.CZゲートの断熱・非断熱過程}
+        \subsubsection{CZゲートの理論と実装}
+        CZ(Controlled-Z)ゲートは制御位相ゲート、条件付き位相ゲートとも呼ばれ、制御(Control)ビットと標的(Targetビット)を入力としてもつ2入力2出力のゲートである。
+        真理値表でみると、制御ビットの状態が0のときには標的ビットに何もせず、制御ビットが1のときには標的ビットの状態を-1にする。
+
+
+        言い換えれば、制御ビットが1のときのみ標的ビットの$\ket{1}$の位相が回転することになる。
+        このようなゲートを実装するには、2量子ビットの準位系を考える必要が出てくる。2量子ビット系が前章で述べた結合状態にある例をもとに考える。
+        個々の量子ビットの準位を$\ket{2}$まで考えると、2準位ビット結合系の準位は図()のようになる。
+        CZゲートは図中()の$\ket{02}$と$\ket{11}$の準位間の相互作用を利用する。
+
+
+        \subsubsection{実装上の課題1.CZゲートのNon-Adiabaticエラー}
         ここまでで、CZゲートがSQUID近傍に流れる電流パルスの制御によって実現できることを述べた。
         しかし上記のようなパルスを実装するにあたっては課題もある。
         その一つが、パルス電流値の急な立ち上げに伴うNon-Adiabatic Errorと呼ばれるエラーの発生である。
-        簡単のため、Hamiltonianが $\hat{H}$が()式で表される1量子ビットを例に考える。
-        $\hat{H}$を図()のように固有値エネルギー$E=\sqrt{H_x^2+H_z^2}$を持つベクトルとして考え、$H_x,H_z$成分に分解、
-        $H_z$成分は固定され$H_x$成分が可変とする。ブロッホ球のx軸,z軸とハミルトニアンのx軸,z軸を重ねると、ハミルトニアンが変化しない場合において
-        状態ベクトルはハミルトニアンの固有ベクトルと同じ向きを向く。
-        ハミルトニアンを表すベクトルとz軸がなす角を$\theta$とし、このベクトルが
-        角度$\Delta \theta$でのラーモア歳差運動を起こす。
-        Rotating frameに移行し、なおかつハミルトニアンの固有ベクトルの向きが変化することを考えた座標系上で考えると
-        ハミルトニアンの固有ベクトルと状態ベクトルのなす角は
-        
-        と表される。
-        Non-Adiabaticエラーは$\Delta \theta$を用いて
-        \begin{equation}
-            a
-        \end{equation}
-        と表されるため、
-        
         通常、電流パルス発生器内部において電流値が変化する際には
-        有限の立ち上げ時間$t_{ramp}$を伴って電流値が変化する。$t_{ramp}$が小さい場合にはハミルトニアンの固有ベクトルの変化
-        \subsubsection{実装上の課題2.低周波磁束ノイズ}
+        有限の立ち上げ時間$t_{ramp}$を伴って電流値が変化する。$t_{ramp}$が小さい場合にはHamiltonianの固有ベクトルの急激な時間変化が起こり
+        系の状態ベクトルの向きが一時的にハミルトニアンの固有ベクトルの向きと一致しなくなる現象が起きる。
+        この際にハミルトニアンの固有ベクトルと系の状態ベクトルのなす角を用いて,非計算基底(ここでは$\ket{11}$)への励起確率は$P_{e}= {\sin(\theta_m)}^2$と表され(この辺りの詳細な議論は[]を参照)
+        電流値の時間変化$dI/dt$が大きいほど$\theta_m$は大きくなることが予想される。
+        したがってNon-Adiabaticエラー抑制のためには、電流値の時間変化が緩やかなパルスを用いて準静的な量子ビット周波数の変化を起こすことが求められる。
 
-    \subsection{AdaibaticなCZゲート}
+        \subsubsection{実装上の課題2.低周波磁束ノイズ}
+        第二の課題として、量子ビットは電流バイアスによる磁束以外に外部環境からの低周波磁束ノイズに常にさらされている。
+        このノイズは1/fノイズとも呼ばれるノイズで、低周波成分が大きく、振幅も低周波で大きいことがわかっている。
+        1/fノイズはパルス時間に対して長周期であり、ほぼ時間変化しない定数振幅の磁束としてパルスに付加される。(図())
+        \begin{figure}[H]
+            \begin{center}
+                \includegraphics[width=12cm]{pulsewithnoise.png}
+                \caption{低周波磁束ノイズが付加されたパルス}
+            \end{center}
+        \end{figure}
+        このような場合には縮退が起きるポイントに正しく状態を遷移させることができなくなったり、与えている電流値が0の状態でも
+        操作するビットの状態が最適動作点でないところに置かれたりする。
+        低周波磁束ノイズはSQUIDが磁束を感知する素子である以上、消去することのできないものであるので
+        ある程度の振幅で発生していることを織り込んでその寄与を抑制するパルス構造が必要となる。
+
+    \subsection{Fast-Adaibatic pulse}
+    Non-Adiabaticエラーへの解決策として、先行文献{}よりFast-Adiabatic Pulseというパルスを導入する。
+    周波数変化、パルス振幅の変化を図()に示す。
+
+    標的ビットの周波数$\omega(t)$は,非調和性を$\eta$とすると
+    \begin{equation}
+        \omega(t) = \frac{2J}{\tan \theta(t)}+\omega_{\mathcal{control}}-\eta_{\mathcal{target}}
+    \end{equation}
+    で与えられ、$\theta$は
+    \begin{equation}
+        \begin{aligned}
+            \theta-\theta_{i}=\sum_{n=1,2, \ldots, n_{m}} \lambda_{n}^{\prime}\left[1-\cos \left(2 \pi n t / t_{p}\right)\right]\\
+            \theta_i = \arctan(2*np.sqrt(2)*J/self.delta)
+            \lambda_{n}^{\prime}
+        \end{aligned}
+    \end{equation}
+    で与えられる。量子ビットの磁束依存性
+    \begin{equation}
+        \omega_{q}(\Phi)=\left(\omega_{q}^{01}-\eta\right) \sqrt{\left|\cos \left(\frac{\Phi}{\Phi_{0}} \pi\right)\right|}+\eta
+    \end{equation}
+    と、相互インダクタンス$M$と電流$I$,発生される磁束$\Phi=MI$の関係より
+    \begin{equation}
+        I = \arccos{\left(\frac{\omega_{q}(t)-\eta}{\omega_{q}^{01}-\eta}\right)^2}\Phi_0/\pi M
+    \end{equation}
+    と与えられる。
+    このパルスの実装により、Non-Adiabaticエラーのエラー率は抑制され、なおかつ短いゲート時間を維持できるとされる。
+    先行論文内では台形パルスによる最小のエラー率が$10^{-4}$のオーダーに留まる中、Fast-Adiabatic Pulseのエラー率はゲート時間の条件によって
+    $10^{-7}$のオーダーにまで下がることが示唆されている。
+
+
+    \subsection{Net-Zero Pulse}
+    Net-Zero Pulseと呼ばれるパルスは、ゲート時間を$T_g$とすると
+    $t=0$から$t=T_g/2$までFast-Adiabatic Pulseを発生させ、$t=T_g/2$から$t=T_g$まで前半のパルスの逆符号の
+    Fast-Adiabatic Pulseを発生させることで実現される。
+    (Hamiltonianのエネルギー準位は磁束の符号への対称性を有しているので、絶対値が同じ負の電流値をかけても系は縮退状態へと遷移する。)
+
 
 
 

@@ -166,8 +166,6 @@ INPUT c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
 INPUT c:/texlive/2020/texmf-dist/tex/latex/l3backend/l3backend-dvips.def
 INPUT wkdir/main.aux
 INPUT wkdir/main.aux
-INPUT wkdir/abstract.aux
-INPUT wkdir/abstract.aux
 OUTPUT wkdir/main.aux
 INPUT c:/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
 INPUT c:/texlive/2020/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -218,8 +216,6 @@ INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmss10.tfm
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-v.tfm
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-h.tfm
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmss17.tfm
-INPUT wkdir/main.toc
-INPUT wkdir/main.toc
 OUTPUT wkdir/main.toc
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-v.tfm
 INPUT c:/texlive/2020/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisg-h.tfm
@@ -282,45 +278,18 @@ INPUT ./img/1Q1R_plot_overpattern_zoomup.png
 INPUT extractbb -B cropbox -O ./img/1Q1R_plot_overpattern_zoomup.png
 INPUT ./img/Xmon_and_Xmon.png
 INPUT extractbb -B cropbox -O ./img/Xmon_and_Xmon.png
+INPUT ./img/QCmodel.png
+INPUT extractbb -B cropbox -O ./img/QCmodel.png
+INPUT c:/texlive/2020/texmf-dist/fonts/tfm/uptex-fonts/jis/upjisr-v.tfm
+INPUT ./img/pulsewithnoise.png
+INPUT extractbb -B cropbox -O ./img/pulsewithnoise.png
 INPUT simpart.tex
 INPUT simpart.tex
 INPUT implementation.tex
 INPUT implementation.tex
 INPUT ./img/Chippic.png
 INPUT extractbb -B cropbox -O ./img/Chippic.png
-INPUT ./img/PLASSYS_stage0.png
-INPUT extractbb -B cropbox -O ./img/PLASSYS_stage0.png
-INPUT ./img/PLASSYS_stage1.png
-INPUT extractbb -B cropbox -O ./img/PLASSYS_stage1.png
-INPUT ./img/PLASSYS_stage2.png
-INPUT extractbb -B cropbox -O ./img/PLASSYS_stage2.png
-INPUT ./img/Ino_test_up.jpg
-INPUT extractbb -B cropbox -O ./img/Ino_test_up.jpg
-INPUT ./img/Ino_test_upL.jpg
-INPUT extractbb -B cropbox -O ./img/Ino_test_upL.jpg
-INPUT ./img/sample_from_above.jpg
-INPUT extractbb -B cropbox -O ./img/sample_from_above.jpg
-INPUT ./img/zoomup_SMA_PCB.jpg
-INPUT extractbb -B cropbox -O ./img/zoomup_SMA_PCB.jpg
-INPUT ./img/Kansei1.jpg
-INPUT extractbb -B cropbox -O ./img/Kansei1.jpg
-INPUT measurement.tex
-INPUT measurement.tex
-INPUT result.tex
-INPUT result.tex
-INPUT discussion.tex
-INPUT discussion.tex
-INPUT conclusion.tex
-INPUT conclusion.tex
-INPUT outlook.tex
-INPUT outlook.tex
-INPUT apology.tex
-INPUT apology.tex
-INPUT appendix.tex
-INPUT appendix.tex
-OUTPUT wkdir/main.out.ps
-INPUT wkdir/main.aux
-INPUT wkdir/abstract.aux
-INPUT wkdir/abstract.aux
-INPUT wkdir/main.run.xml
-OUTPUT wkdir/main.run.xml
+INPUT ./img/CPW_img.png
+INPUT extractbb -B cropbox -O ./img/CPW_img.png
+INPUT ./img/Circdiagram.png
+INPUT extractbb -B cropbox -O ./img/Circdiagram.png
